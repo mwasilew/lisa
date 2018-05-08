@@ -20,7 +20,10 @@
 # LISA Shell: the Linux Integrated System Analysis Shell
 
 # Setup colors
-source src/shell/lisa_colors
+case "$-" in
+    *i*) source src/shell/lisa_colors ;;
+    *) ;;
+esac
 
 # By default use internal libraries
 DEVMODE=${DEVMODE:-1}
@@ -46,7 +49,10 @@ fi
 # Only clear the screen if stdout is a terminal, to avoid ASCII escape
 # characters to be sent to a log file for example.
 function clear {
-test -t 1 && command clear
+    case "$-" in
+        *i*) test -t 1 && command clear ;;
+        *) ;;
+    esac
 }
 
 ################################################################################
