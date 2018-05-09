@@ -20,10 +20,7 @@
 # LISA Shell: the Linux Integrated System Analysis Shell
 
 # Setup colors
-case "$-" in
-    *i*) source src/shell/lisa_colors ;;
-    *) ;;
-esac
+source src/shell/lisa_colors
 
 # By default use internal libraries
 DEVMODE=${DEVMODE:-1}
